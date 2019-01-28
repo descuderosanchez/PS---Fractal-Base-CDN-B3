@@ -1,0 +1,187 @@
+/*
+ * PS Override
+ *
+ */
+
+
+ /*************/
+ /*Azul Oscuro*/
+ $color_1:		#001633;
+ $color_1_70: rgba(0, 22, 51, 0.7);
+/*Rosa*/
+ $color_2:		#fb7377;
+ $color_2_70: rgba(234, 123, 123, 0.7);
+/*Azul Claro*/
+ $color_3:		#2856a0;
+ $color_3_70: rgba(40, 86, 160, 0.7);
+ /*Gris Claro*/
+ $color_4:		#f2f2f2;
+ $color_4_70: rgba(242, 242, 242, 0.7);
+/*************/
+
+ /*************/
+ /* FUENTES */
+ $fontfamily_1: 'Oswald', sans-serif;
+ $fontfamily_2: 'Montserrat', sans-serif;
+ $fontfamily_3: 'arista_2.0regular';
+/*************/
+
+
+
+.bk-color1{
+    background-color: $color_1;
+    &--70{
+        background-color: $color_1_70;
+    }
+}
+.bk-color2{
+    background-color: $color_2;
+    &--70{
+        background-color: $color_2_70;
+    }
+}
+.bk-color3{
+    background-color: $color_3;
+    &--70{
+        background-color: $color_3_70;
+    }
+}
+.bk-color4{
+    background-color: $color_4;
+    &--70{
+        background-color: $color_4_70;
+    }
+}
+
+%general_shadow {
+	box-shadow: 7px 7px 20px 0px rgba(50, 50, 50, 0.32);
+	&:hover { box-shadow: 7px 7px 20px 0px rgba(0, 0, 0, 0.5);}
+}
+
+%transform {
+	transform: transition;
+	transition-duration: 0.5s;
+}
+
+%transform1s {
+	transform: transition;
+	transition-duration: 1s;
+}
+
+%after-before-bas {
+	position: absolute;
+	content: " ";
+}
+
+%btn-tabs {
+	background: none;
+	color: white;
+	border: 1px solid white;
+	border-radius: 0;
+	box-shadow: none;
+	margin-right: 1rem;
+	&.active,
+	&:hover { 
+		background: $color_2;
+		border-color: transparent;
+		color: white;
+	}
+}
+
+@mixin linear-gradient($from, $to) {
+	background: $to;
+	  background: -moz-linear-gradient(top, $from 0%, $to 100%);
+	  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
+	  background: -webkit-linear-gradient(top, $from 0%,$to 100%);
+	  background: -o-linear-gradient(top, $from 0%,$to 100%);
+	  background: linear-gradient(to bottom, $from 0%,$to 100%);
+	  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#{$from}, endColorstr=#{$to})
+  }
+
+@mixin border-radius($radius) { 
+	 -webkit-border-radius: $radius;
+		-moz-border-radius: $radius; 
+			 border-radius: $radius;
+}
+
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+    	    transform: $transforms;
+}
+
+
+@mixin breakpoint($point) {
+	@if $point == mobile {
+	  @media (min-width: 500px) { @content ; }
+   }
+	@else if $point == tablet {
+	  @media (min-width: 600px) { @content ; }
+   }
+	 @else if $point == tablet-port {
+	  @media (min-width: 900px) { @content ; }
+   }
+	@else if $point == desktop {
+	  @media (min-width: 1115px)  { @content ; }
+   }
+   @else if $point == big-screen {
+	  @media (min-width: 1200px)  { @content ; }
+ 
+   }
+ }
+
+ body {
+	font-family: $fontfamily_2;
+	font-size: 28px;
+    overflow-x: hidden;
+    p{
+        font-family: $fontfamily_2;
+	    font-size: 18px;
+    }
+ }
+ section{
+     margin-bottom: 50px;
+ }
+
+ .nopaddings{
+     padding-left: 0;
+     padding-right: 0;
+ }
+
+
+.img-full{
+    width: 100%;
+}
+
+/* Botones */
+.btn{
+    &.btn{
+        &--link{
+            font-family: $fontfamily_1;
+            font-size: 2rem;
+            font-weight: 300;
+        }
+    }
+}
+
+.text-color{
+    &--white{
+        color:#fff;
+    }
+}
+.text{
+    &--title{
+        font-size: 3.5rem;
+        font-family: $fontfamily_2;
+        font-weight: 400;
+        &--color1{
+            font-size: 3rem;
+            color: $color_1;
+            font-family: $fontfamily_2;
+            font-weight: 400;
+        }
+    }
+}
+

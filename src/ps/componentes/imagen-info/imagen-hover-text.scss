@@ -1,0 +1,24 @@
+.imagen-info{
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+    &__textlink{
+        display: block;
+        position: absolute;
+        bottom: 20px;
+        text-align: center;
+        width:80%;
+        margin: 0 10%;
+    }
+}
+
+.carousel:after {
+    content: 'flickity';
+    display: none; /* hide :after */
+}
+/* disable Flickity for large devices */
+@media ( min-width: 768px ) {
+    .carousel:after {
+        content: '';
+    }
+}
