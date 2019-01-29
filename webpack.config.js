@@ -1,11 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const extractSass = new ExtractTextPlugin({
-  filename: "css/index.css"
-});
 
 const copyImages = new CopyWebpackPlugin([
   {
@@ -21,10 +18,7 @@ const config = {
     path: path.resolve(__dirname, 'build')
   },
   resolve: {
-    extensions: ['.js', '.json', '.ts', '.hbs', '.vue'],
-    alias: {
-      vue$: "vue/dist/vue.esm.js"
-    }
+    extensions: ['.js', '.json', '.ts', '.hbs'],
   },
   module: {
     rules: [
@@ -47,15 +41,12 @@ const config = {
         }
       },
       {
-        test: /\.vue$/,
-        loader: 'vue-loader'
-      },
-      {
-        test: /\.scss$/,
-        loader: extractSass.extract({
-          use: ['css-loader', 'postcss-loader', 'sass-loader'],
-          fallback: 'style-loader'
-        })
+        test: /\.s?[ac]ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+            { loader: 'css-loader', options: { url: false, sourceMap: true } },
+            { loader: 'sass-loader', options: { sourceMap: true } }
+        ],
       },
       {
         test: /\.(woff|woff2|eot|ttf|svg)$/,
@@ -90,8 +81,15 @@ const config = {
     ]
   },
   plugins: [
-    extractSass,
-    copyImages
+    copyImages,
+    new MiniCssExtractPlugin({
+      filename: "css/index.css"
+    }),
+    new webpack.ProvidePlugin({
+           $: "jquery",
+           jQuery: "jquery",
+           Popper: ['popper.js', 'default']
+   })
   ]
 };
 

@@ -17,6 +17,8 @@
  /*Gris Claro*/
  $color_4:		#f2f2f2;
  $color_4_70: rgba(242, 242, 242, 0.7);
+ /*Verde Claro*/
+ $color_5: #44a700;
 /*************/
 
  /*************/
@@ -182,6 +184,9 @@
             font-family: $fontfamily_2;
             font-weight: 400;
         }
+    }
+    &--center{
+        text-align: center;
     }
 }
 

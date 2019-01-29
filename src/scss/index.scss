@@ -3,5 +3,10 @@
 @import "overrides";
 
 
+/*COMPONENTES*/
+@import "../ps/componentes/products/board-product";
 @import "../ps/componentes/imagen-info/imagen-hover-text";
+
+/*SECCIONES*/
 @import "../ps/secciones/carnavales/texto-mas-categorias";
+@import "../ps/secciones/productos/productos-destacados";
