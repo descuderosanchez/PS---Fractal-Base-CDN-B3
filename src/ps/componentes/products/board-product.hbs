@@ -1,12 +1,16 @@
 <div class="board-product">
-    <img class="img-full" src="https://picsum.photos/{{width}}/{{height}}" alt="Titulo de imagen"/>
-    <div class="board-product__name bk-color1--70">
-        <p class="text btn btn--link text-color--white text--center">Oso Peluche</p>
-        <div class="board-product__price">
-            <p class="text text-color--color1 text--center">10,50€</p>
+    <div class="board-product__container">
+        <img class="board-product__image img-full" src="https://picsum.photos/{{width}}/{{height}}" alt="Titulo de imagen"/>
+        <div class="board-product__name bk-color1--70">
+            <p class="text btn btn--link text-color--white text--center">Oso Peluche</p>
+            <div class="board-product__price">
+                <p class="text text-color--color1 text--center">10,50€</p>
+            </div>
         </div>
     </div>
+    {{#if boton}}
     <div class="board-product__action">
         <p class="text text-color--color1 text--center">Añadir <i class="fas fa-gifts"></i></p>
     </div>
+    {{/if}}
 </div>

@@ -11,6 +11,16 @@
         margin: 0 10%;
     }
 }
+/*Version 2*/
+.imagen-info2{
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+    &__textlink{
+        display: block;
+        text-align: center;
+    }
+}
 
 .carousel:after {
     content: 'flickity';

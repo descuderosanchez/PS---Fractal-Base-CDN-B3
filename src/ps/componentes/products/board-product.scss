@@ -1,6 +1,45 @@
 .board-product{
     margin:0 10px;
     width: 200px;
+    &__container{
+        position: relative;
+        margin-bottom: 15px;
+    }
+    &__name{
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        bottom: 0;
+        .text{
+            font-size: 1.25rem;
+            line-height: 1.25rem;
+            color: white;
+        }
+    }
+    &__price{
+        .text{
+            font-size: 1.6rem;
+            padding-bottom: 10px;
+        }
+    }
+    &__action{
+        width: 100%;
+        display: block;
+        .text{
+            font-size: 1.25rem;
+            text-align: center;
+            margin: 0 auto;
+            padding: 5px 10px;
+            border: 1px solid $color_1;
+            width: 60%;
+        }
+    }
+}
+
+
+.board-product2{
+    margin:0 10px;
+    width: 200px;
     &__name{
         width: 100%;
         text-align: center;
